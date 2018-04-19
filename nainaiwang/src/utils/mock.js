@@ -25,3 +25,9 @@ Mock.mock('http://api/getRecBuy',{
   "money|1-100000": 100000,
   "order|1": [1,2]
 });
+
+Mock.mock('http://api/getBaseInfo',{
+    "username": '@last',
+    "telPhone": /^1[3|4|5|7|8]\d{9}$/,
+    "email": '@email'
+})

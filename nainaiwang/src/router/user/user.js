@@ -5,6 +5,7 @@ import Information from '@/components/user/information'
 import Baseinfo from '@/components/user/information/baseinfo'
 import Changepaypwd from '@/components/user/information/changePayPwd'
 import Changepwd from '@/components/user/information/changePwd'
+import Changetel from '@/components/user/information/changetel'
 
 Vue.use(Router)
 
@@ -16,25 +17,30 @@ export default new Router({
       component: Home
     },
     {
-      path: '/information',
+      path: '/information/home',
       name: 'Information',
       component: Information,
       children: [
         {
-          path: '/baseInfo',
+          path: '/information',
           name: 'Baseinfo',
           component: Baseinfo
         },
         {
-          path: '/changePayPwd',
+          path: '/information/changePayPwd',
           name: 'Changepaypwd',
           component: Changepaypwd
         },
         {
-          path: '/changePwd',
+          path: '/information/changePwd',
           name: 'Changepwd',
           component: Changepwd
-        }
+        },
+          {
+              path: '/information/changeTel',
+              name: 'Changetel',
+              component: Changetel
+          }
       ]
     }
 

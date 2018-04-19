@@ -10,7 +10,7 @@
             <span :class="{'right': !item.isShow, 'down': item.isShow}" v-if="item.children"></span></a>
           <ul class="second-list" v-if="item.isShow">
             <li v-for="item2 in item.children">
-              <router-link :to="item2.to">{{item2.name}}</router-link>
+              <router-link :to="item2.to" exact>{{item2.name}}</router-link>
             </li>
           </ul>
         </li>
@@ -34,15 +34,15 @@
                 children: [
                   {
                     name: '基本信息',
-                    to: 'baseInfo'
+                    to: '/information'
                   },
                   {
                     name: '修改支付密码',
-                    to: 'changePayPwd'
+                    to: '/information/changePayPwd'
                   },
                   {
                     name: '修改密码',
-                    to: 'changePwd'
+                    to: '/information/changePwd'
                   }
                 ]
               },

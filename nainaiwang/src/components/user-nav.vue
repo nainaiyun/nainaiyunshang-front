@@ -3,9 +3,24 @@
       <div class="container float-clear">
         <img class="float-l" src="../assets/images/nainaiwang.png" alt="">
         <ul class="float-l">
-          <li class="float-l" v-for="(item, index) in navList">
-            <router-link :to="item.to">{{item.name}}</router-link>
-          </li>
+            <li class="float-l">
+                <router-link to="/" exact>首页</router-link>
+            </li>
+            <li class="float-l">
+                <router-link to="/information">账户信息</router-link>
+            </li>
+            <li class="float-l">
+                <router-link to="/capital">资金管理</router-link>
+            </li>
+            <li class="float-l">
+                <router-link to="/transaction">交易管理</router-link>
+            </li>
+            <li class="float-l">
+                <router-link to="/warehouse">仓库管理</router-link>
+            </li>
+            <li class="float-l">
+                <router-link to="/follow">关注中心</router-link>
+            </li>
         </ul>
       </div>
     </div>
@@ -16,7 +31,7 @@
         name: "user-nav",
       data() {
           return {
-            navList: [
+           /* navList: [
               {
                 name: '首页',
                 to: '/'
@@ -42,7 +57,7 @@
                 to: '/follow'
               },
 
-            ]
+            ]*/
           }
       }
     }
@@ -80,7 +95,7 @@
           text-decoration: none;
           background-color: #930d13;
         }
-        .router-link-exact-active{
+        .router-link-active{
           background-color: #930d13;
         }
       }
