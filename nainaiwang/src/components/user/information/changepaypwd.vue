@@ -12,7 +12,7 @@
                 <input type="password" class="default" v-model="formData.oldPwd" @blur="checkOldPwd">
                 <span style="color: #777;">
                     忘记密码？试试
-                    <a href="#" style="color: #0088cc">申诉找回</a>
+                    <router-link to="/information/appealPay" style="color: #0088cc">申诉找回</router-link>
                 </span>
                 <span class="err-msg">{{message.oldPwd}}</span>
             </div>

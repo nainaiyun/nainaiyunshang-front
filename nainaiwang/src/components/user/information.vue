@@ -30,7 +30,7 @@
             list: [
               {
                 name: '账户管理',
-                isShow: false,
+                isShow: true,
                 children: [
                   {
                     name: '基本信息',
