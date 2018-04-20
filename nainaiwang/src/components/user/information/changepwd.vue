@@ -1,6 +1,6 @@
 <template>
     <div>
-      修改密码
+      修改密码密码mi'ma
     </div>
 </template>
 
