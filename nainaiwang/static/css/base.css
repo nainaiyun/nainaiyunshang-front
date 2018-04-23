@@ -41,7 +41,7 @@ a:hover {
     text-decoration: underline;
 }
 
-input.default {
+input.default, select.default {
     width: 252px;
     height: 37px;
     border: 1px solid #ccc;

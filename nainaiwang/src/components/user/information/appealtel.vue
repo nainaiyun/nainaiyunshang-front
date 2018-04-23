@@ -1,37 +1,10 @@
 <template>
     <div>
         <p class="title">
-            账户信息 > 支付密码申诉找回
+            账户信息 > 手机号申诉修改
         </p>
+
         <div v-if="view == 1" class="view-box">
-            <img src="../../../assets/images/icon_jd.jpg" alt="" class="process-img">
-            <p class="tip">
-                <img src="../../../assets/images/jinggao.png" alt="">
-                请确保手机通畅，以便于我们与您联系，并接收申诉结果。
-            </p>
-            <div class="input-box">
-                <span class="input-label">
-                    手机号码：
-                </span>
-                <span style="color: #777;">
-                    {{13123242563}}
-                    无法接收到消息，请
-                    <a href="#" style="color: #0088cc">联系客服</a>
-                </span>
-            </div>
-            <div class="input-box">
-                  <span class="input-label">
-                      手机校验码：
-                  </span>
-                <input type="text" class="default" v-model="telCheckNum" placeholder="请输入校验码">
-                <input type="button" value="获取验证码" class="get-checknum">
-                <span class="err-msg">{{message.telCheckNum}}</span>
-            </div>
-            <div class="input-box">
-                <button class="default" @click="sendCheck()">下一步</button>
-            </div>
-        </div>
-        <div v-if="view == 2" class="view-box">
             <img src="../../../assets/images/infor_jd2.jpg" alt="" class="process-img">
             <p class="tip">
                 <img src="../../../assets/images/jinggao.png" alt="">
@@ -50,6 +23,13 @@
                 </span>
                 <input type="text" class="default" v-model="formData.representative">
                 <span class="err-msg">{{message.representative}}</span>
+            </div>
+            <div class="input-box">
+                <span class="input-label">
+                    新手机号：
+                </span>
+                <input type="text" class="default" v-model="formData.newTel">
+                <span class="err-msg">{{message.newTel}}</span>
             </div>
             <div class="input-box">
                   <span class="input-label">
@@ -86,7 +66,7 @@
                 <button class="default" style="margin-left: 0" @click="sendInfo()">下一步</button>
             </div>
         </div>
-        <div v-if="view == 3" class="view-box">
+        <div v-if="view == 2" class="view-box">
             <img src="../../../assets/images/infor_jd3.jpg" alt="" class="process-img">
             <p class="tip">
                 <span style="display: block; text-align: center">您的申诉已提交成功！</span>
@@ -100,71 +80,28 @@
 <script>
     import $http from '../../../axios/http.js'
     export default {
-        name: "appealpay",
+        name: "appealtel",
         data() {
             return {
-                view: 3,
+                view: 1,
                 telCheckNum: '',
                 formData: {
                     company: '',
                     representative: '',
+                    newTel: '',
                     license: '',
                     apply: ''
                 },
                 message: {
                     telCheckNum: '',
                     company: '',
-                    representative: ''
+                    representative: '',
+                    newTel: ''
                 }
             }
         },
         methods: {
 
-            // 点击发送手机验证码
-            sendCheck() {
-                if(!this.telCheckNum) {
-                    this.message.telCheckNum = '手机验证码不能为空！';
-                }else{
-
-                    // 发送验证码
-                    $http({
-                        method: 'post',
-                        url: ''
-                    }).then(res => {
-                        console.log(res);
-                    },err => {
-                        console.log(err);
-                    })
-                }
-            },
-
-            // 点击发送企业信息
-            sendInfo() {
-                if(this.checkCompany() && this.checkRep()){
-                    $http()
-                }
-
-            },
-
-            // 验证企业名称
-            checkCompany() {
-                if(!this.formData.company){
-                    this.message.company = "企业名称不能为空！"
-                    return false;
-                }else {
-                    return true;
-                }
-            },
-
-            // 验证法人
-            checkRep() {
-                if(!this.formData.representative){
-                    this.message.representative = "企业法人不能为空！"
-                    return false;
-                }else {
-                    return true;
-                }
-            }
         }
     }
 </script>
@@ -204,7 +141,6 @@
             }
         }
         .tip {
-            width: 550px;
             line-height: 25px;
         }
     }

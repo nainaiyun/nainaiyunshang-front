@@ -12,7 +12,7 @@
                 <span style="color: #777;">
                     {{13123242563}}
                     无法接收到消息，
-                    <a href="#" style="color: #0088cc">进行申诉</a>
+                    <router-link to="/information/appealTel" style="color: #0088cc">进行申诉</router-link>
                 </span>
             </div>
             <div class="input-box">
@@ -71,13 +71,13 @@
 </script>
 
 <style scoped lang="less">
-.get-checknum{
-    height: 37px;
-    vertical-align: top;
-    padding: 0 10px;
-    border: 1px solid #c0c0c0;
-    margin-left: 5px;
-    background: #F4F1F1;
-    color: #777;
-}
+    .get-checknum{
+        height: 37px;
+        vertical-align: top;
+        padding: 0 10px;
+        border: 1px solid #c0c0c0;
+        margin-left: 5px;
+        background: #F4F1F1;
+        color: #777;
+    }
 </style>

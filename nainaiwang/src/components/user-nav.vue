@@ -10,16 +10,16 @@
                 <router-link to="/information">账户信息</router-link>
             </li>
             <li class="float-l">
-                <router-link to="/capital">资金管理</router-link>
+                <router-link to="/bankroll">资金管理</router-link>
             </li>
             <li class="float-l">
-                <router-link to="/transaction">交易管理</router-link>
+                <router-link to="/transaction/home">交易管理</router-link>
             </li>
             <li class="float-l">
-                <router-link to="/warehouse">仓库管理</router-link>
+                <router-link to="/warehouse/home">仓库管理</router-link>
             </li>
             <li class="float-l">
-                <router-link to="/follow">关注中心</router-link>
+                <router-link to="/message">关注中心</router-link>
             </li>
         </ul>
       </div>
